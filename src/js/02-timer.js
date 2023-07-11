@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import Notiflix from "notiflix";
+import "notiflix/dist/notiflix-3.2.6.min.css";
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
