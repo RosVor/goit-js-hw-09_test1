@@ -10,18 +10,7 @@ form.addEventListener('submit', function(event) {
   const step = parseInt(stepInput.value);
   const amount = parseInt(amountInput.value);
 
-  function createPromise(position, delay) {
-    const shouldResolve = Math.random() > 0.3;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (shouldResolve) {
-          resolve({ position, delay });
-        } else {
-          reject({ position, delay });
-        }
-      }, delay);
-    });
-  }
+
   for (let i = 1; i <= amount; i++) {
     createPromise(i, delay).then(({ position, delay }) => {
       console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -31,3 +20,15 @@ form.addEventListener('submit', function(event) {
   }
 });
 
+function createPromise(position, delay) {
+  const shouldResolve = Math.random() > 0.3;
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
+}
