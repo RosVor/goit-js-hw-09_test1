@@ -1,4 +1,4 @@
-const form = document.querySelector('.form');
+import Notiflix from 'notiflix'; const form = document.querySelector('.form');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault(); 
@@ -22,7 +22,6 @@ form.addEventListener('submit', function(event) {
       }, delay);
     });
   }
-  
   for (let i = 1; i <= amount; i++) {
     createPromise(i, delay).then(({ position, delay }) => {
       console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
