@@ -1,4 +1,5 @@
 import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
